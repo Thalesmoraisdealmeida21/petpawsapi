@@ -1,0 +1,19 @@
+{
+  "name": "petpaws",
+  "version": "1.0.0",
+  "description": "API da aplicação PETPAWS",
+  "main": "app.js",
+  "dependencies": {
+    "bcrypt": "^4.0.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "sequelize": "^5.21.7",
+    "sqlite3": "^4.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Thales e Carlos",
+  "license": "MIT"
+}
