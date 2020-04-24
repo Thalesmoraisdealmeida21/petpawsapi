@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router();
-const User = require('./controllers/User')
+const User = require('./controllers/User');
+const Pets = require('./controllers/Pets');
 
 
 
@@ -33,12 +34,10 @@ const User = require('./controllers/User')
   })
 
   router.post('/pet/create', (req, res)=>{
-    res.send("Rota inicial")
+    res.send("Rota criaçãode pet")
   })
 
-  router.get('/pet/list', (req, res)=>{
-    res.send("Rota inicial")
-  })
+  router.get('/pet/list', Pets.listaPets);
 
   router.delete('/pet/:id', (req, res)=>{
     res.send("Rota inicial")
