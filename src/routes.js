@@ -16,9 +16,18 @@ const Pets = require('./controllers/Pets');
 
 
 
+<<<<<<< HEAD
   
 
   
+=======
+  /*asldsadjkhaskhdkjsadhaksjdjhgadsjkhdsajkhdsajkhdsajkhsjkhdsajkhsajkh*/
+*/
+  /*dasbdsajhdjkasdhaksjdhaksjdhsajkdahsd
+
+
+=======
+>>>>>>> 503bd3f0781992fc7c59810f325498cc3e39bb0b
   router.post('/user/create', (req, res)=>{
     res.send("Rota criação de usuário")
   })
