@@ -14,6 +14,13 @@ const Pets = require('./controllers/Pets');
 
   router.get('/user/list', User.listaUsers);
 
+  router.get('/user/login', (req, res)=>{
+
+  });
+
+  /*asldsadjkhaskhdkjsadhaksjdjhgadsjkhdsajkhdsajkhdsajkhsjkhdsajkhsajkh*/
+
+  
   router.delete('/user/:id', (req, res)=>{
     res.send("Rota Deleção de usuário ")
   })
