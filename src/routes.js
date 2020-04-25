@@ -9,9 +9,7 @@ const User = require('./controllers/User')
 
 
 
-  router.post('/user/create', (req, res)=>{
-    res.send("Rota criação de usuário")
-  })
+  router.post('/user/create', User.createUser)
 
   router.get('/user/list', User.listaUsers);
 
