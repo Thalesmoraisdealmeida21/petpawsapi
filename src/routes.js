@@ -44,9 +44,7 @@ const Pets = require('./controllers/Pets');
       res.send("Rota inicial")
   })
 
-  router.post('/pet/create', (req, res)=>{
-    res.send("Rota criaçãode pet")
-  })
+  router.post('/pet/create', Pets.createPets)
 
   router.get('/pet/list', Pets.listaPets);
 
