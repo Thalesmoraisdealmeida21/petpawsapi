@@ -7,17 +7,6 @@ const Pets = require('./controllers/Pets');
 
 
 
-<<<<<<< HEAD
-/**
- * 
- * parametros
- * nome
- * email
- * senha
- */
-=======
-/*asdsadas*/
->>>>>>> 43e89fe30b893131cbc77f9c6b4aa91704917354
 
 
   router.post('/user/create', User.createUser)
