@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router();
 const User = require('./controllers/User');
 const Pets = require('./controllers/Pets');
+const Auth = require('./../src/controllers/Auth');
 
 
 
@@ -13,6 +14,10 @@ const Pets = require('./controllers/Pets');
 
   router.get('/user/list', User.listaUsers);
 
+
+
+  // Rotas de autenticação
+  router.post('/login', Auth.login)
 
 
   
