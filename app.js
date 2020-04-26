@@ -10,9 +10,7 @@ app.use(cors())
 app.use(express.json())
 
 
-app.use('/', require('./src/routes'));
-
-    
+app.use('/', require('./src/routes'))
 
 
 require('./src/database/index');

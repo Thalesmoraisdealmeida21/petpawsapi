@@ -22,7 +22,7 @@ module.exports = {
         deficiencia: deficiencia
 
       }).then((pet)=>{
-        res.status(200).json()
+        res.status(200).json(pet)
       })
     }
 }
