@@ -26,7 +26,7 @@
 ## 🚀 Ponto de Partida
 
 
- Para rodar a API você precisa instalar um ambiente para aplicativos node versão 12 ou superior, tendo em sua maquina ja instalado o node é necessario executar o comando "npm install" para instalar todas as dependecias da aplicação. Feito isto basta executar o comando "npm start" e a aplicação estara rodadno em "localhost:3333"
+ Para rodar a API você precisa instalar um ambiente para aplicativos node versão 12 ou superior, tendo em sua maquina ja instalado o node é necessario executar o comando "npm install" para instalar todas as dependecias da aplicação. Feito isto basta executar o comando "npm start" e a aplicação estara rodando em "localhost:3333"
  
 
 
@@ -36,7 +36,7 @@
 <h5>Abaixo estão todas as funcioanlidades da api de autenticação e suas rotas.</h5> 
 
 - [X] Criação de usuario
-        **Rota:** /user/create)
+        **Rota:** /user/create
         __Tipo:__ POST 
             
             
@@ -46,7 +46,7 @@
              senha: string
         
 - [x] Listar todos os usuários 
-        **Rota:** /user/list)
+        **Rota:** /user/list
         __Tipo:__ GET 
             
             
@@ -69,7 +69,7 @@
 
   
 - [x] Login no sistema 
-         **Rota:** /login)
+         **Rota:** /login
         __Tipo:__ POST 
             
             
