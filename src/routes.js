@@ -18,6 +18,7 @@ const Auth = require('./../src/controllers/Auth');
 
   // Rotas de autenticação
   router.post('/login', Auth.login)
+  router.post('/logout', Auth.logout)
 
 
   

@@ -1,4 +1,5 @@
 const User = require('./../database/models/User');
+const Blacklist = require('./../database/models/Blacklist')
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt')
 
@@ -11,6 +12,8 @@ module.exports = {
 
 
     const {nome, senha} = req.body
+
+
       User.findOne({where:{
             nome: nome
       }}).then((user)=>{
@@ -18,7 +21,7 @@ module.exports = {
             bcrypt.compare(senha, user.password, function(err, result) {
               if(result){
                   const token = jwt.sign({ nome: nome }, 'shhhhh');
-                  res.status(200).json(token)
+                  res.status(200).json({token: token})
               }
           });
           } else {
@@ -29,6 +32,26 @@ module.exports = {
         console.log("Erro:" + e.message)
       })
 
+  },
 
+  async logout(req, res){
+    const token = req.headers.authorization
+
+    console.log(token);
+
+
+    Blacklist.create({
+      token: token
+    }).then((token)=>{
+      if(token.token){
+        res.status(200).json({mensagem: "Deslogado com sucesso"})
+      }
+    })
+  
+
+ 
   }
+
+
+
 }
