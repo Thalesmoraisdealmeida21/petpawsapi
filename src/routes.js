@@ -3,7 +3,7 @@ const router = express.Router();
 const User = require('./controllers/User');
 const Pets = require('./controllers/Pets');
 const Auth = require('./../src/controllers/Auth');
-
+const verifyAuthorization = require('./middleware/auth') 
 
 
 
@@ -11,57 +11,40 @@ const Auth = require('./../src/controllers/Auth');
 
 
   router.post('/user/create', User.createUser)
-
   router.get('/user/list', User.listaUsers);
 
 
 
-  // Rotas de autenticação
   router.post('/login', Auth.login)
   router.post('/logout', Auth.logout)
 
 
-  
-
-  
-  router.post('/user/create', (req, res)=>{
-    res.send("Rota criação de usuário")
-  })
-
-
-
-  router.get('/user/list', User.listaUsers);
-
- 
-
-
-  router.delete('/user/:id', (req, res)=>{
-    res.send("Rota Deleção de usuário ")
-  })
-
-  router.put('/user/:id', (req, res)=>{
-    res.send("Rota atualização de usuário")
-  })
 
 
 
 
 
-  router.get('/pet', (req, res)=>{
+/*
+* A função verifyAuthorization quando passada como middleware exige autenticação
+* para a rota em questão, caso não tenha o token no header ou ele seja inválido não acessa a rota e retorna 401
+*
+*/
+
+  router.get('/pet', verifyAuthorization, (req, res)=>{
       res.send("Rota inicial")
   })
 
-  router.post('/pet/create', (req, res)=>{
+  router.post('/pet/create', verifyAuthorization, (req, res)=>{
     res.send("Rota criaçãode pet")
   })
 
-  router.get('/pet/list', Pets.listaPets);
+  router.get('/pet/list', verifyAuthorization, Pets.listaPets);
 
-  router.delete('/pet/:id', (req, res)=>{
+  router.delete('/pet/:id', verifyAuthorization, (req, res)=>{
     res.send("Rota inicial")
   })
 
-  router.put('/pet/:id', (req, res)=>{
+  router.put('/pet/:id', verifyAuthorization, (req, res)=>{
     res.send("Rota inicial")
   })
 

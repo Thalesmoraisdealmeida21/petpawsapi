@@ -6,21 +6,24 @@ module.exports = {
           id: {
             type: DataTypes.INTEGER,
             allowNull: false,
-            primarykey: true,
+            primaryKey: true,
             autoIncrement: true
           },
           token: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true,
+
           },
           createdAt: {
             type: DataTypes.DATE,
-            allowNull: false
+           
           },
           updatedAt: {
             type: DataTypes.DATE,
-            allowNull: false
+            
           }
+        },{
+          freezeTable: false
         })
   },
 

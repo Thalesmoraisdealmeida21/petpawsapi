@@ -37,9 +37,6 @@ module.exports = {
   async logout(req, res){
     const token = req.headers.authorization
 
-    console.log(token);
-
-
     Blacklist.create({
       token: token
     }).then((token)=>{

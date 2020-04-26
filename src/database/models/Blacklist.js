@@ -4,15 +4,23 @@ const {Model, DataTypes} = require('sequelize')
 class Blacklist extends Model{
     static init(sequelize){
       super.init({
-     
+        id: {
+          type: DataTypes.NUMBER,
+          allowNull: false,
+          primaryKey: true,
+          autoIncrement: true
+        },
         token: {
           type: DataTypes.STRING,
-          allowNull: false
-        },
+          allowNull: false,
+   
+         
+        }
 
       }, {
           sequelize,
-          freezeTableName: false
+          freezeTableName: true,
+          
       })
     }
 

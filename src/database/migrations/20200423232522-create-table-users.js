@@ -5,10 +5,10 @@ module.exports = {
     return queryInterface.createTable('Users', {
 
       id: {
-        allowNull: false,
-        autoIncrement: true,
-        primaryKey: true,
         type: DataTypes.INTEGER,
+        allowNull: false,
+        primarykey: true,
+        autoIncrement: true
       },
       nome: {
         allowNull: false,
