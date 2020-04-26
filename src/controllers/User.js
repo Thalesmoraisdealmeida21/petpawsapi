@@ -1,5 +1,5 @@
 const User = require('./../database/models/User');
-
+const bcrypt = require('bcrypt');
 
 
 module.exports = {
@@ -14,17 +14,24 @@ module.exports = {
     },
 
     async createUser(req, res){
-
+    
+      const saltRounds = 16;
+  
       const { nome, email, senha } = req.body
+      bcrypt.genSalt(saltRounds, function(err, salt) {
+        bcrypt.hash(senha, salt, function(err, hash) {
+            User.create({
+              nome: nome,
+              email: email,
+              password: senha
       
-      User.create({
-        nome: nome,
-        email: email,
-        password: senha
-
-      }).then((user)=>{
-        res.status(200).json()
-      })
+            }).then((user)=>{
+              res.status(200).json(user)
+            })
+        });
+    });
+    
+     
 
     
 /*
