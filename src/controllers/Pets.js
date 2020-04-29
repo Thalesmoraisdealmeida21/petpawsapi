@@ -4,25 +4,50 @@ const Pets = require('./../database/models/Pets');
 module.exports = {
 
 
-    async listaPets(req, res){
-      
-      Pets.findAll().then((pet)=>{
+  async listaPets(req, res) {
 
-        res.json(pet);
-      })
-    },
+    Pets.findAll().then((pet) => {
 
-    async createPets(req, res){
+      res.json(pet);
+    })
+  },
 
-      const { quantidade, nome, deficiencia } = req.body
-      
-      Pets.create({
-        nome: nome,
-        quantidade: quantidade,
-        deficiencia: deficiencia
+  async createPets(req, res) {
 
-      }).then((pet)=>{
-        res.status(200).json(pet)
-      })
-    }
+    const { quantidade, nome, deficiencia } = req.body
+
+    Pets.create({
+      nome: nome,
+      quantidade: quantidade,
+      deficiencia: deficiencia
+
+    }).then((pet) => {
+      res.status(200).json(pet)
+    })
+  },
+
+  async altPets(req, res) {
+
+    Pets.update({
+      quantidade: quantidade,
+      nome: nome,
+    }, {
+      where: {
+        id: 'idCaso'
+      }
+    }).then((ret) => {
+      res.status(200).json()
+    })
+  },
+
+  async deletePets(req, res) {
+
+    Pets.destroy({
+      where: {
+        id: 'idCaso'
+      }
+    }).then((ret) => {
+      res.status(200).json()
+    })
+  },
 }

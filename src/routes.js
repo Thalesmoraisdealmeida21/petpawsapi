@@ -8,24 +8,9 @@ const Pets = require('./controllers/Pets');
 
 
 
-  router.post('/user/create', User.createUser)
-
-  router.get('/user/list', User.listaUsers)
-
-
-
-  
-
-  
-  router.post('/user/create', (req, res)=>{
-    res.send("Rota criação de usuário")
-  })
-
-
+  router.post('/user/create', User.createUser);
 
   router.get('/user/list', User.listaUsers);
-
- 
 
 
   router.delete('/user/:id', (req, res)=>{
@@ -37,24 +22,18 @@ const Pets = require('./controllers/Pets');
   })
 
 
-
-
-
   router.get('/pet', (req, res)=>{
       res.send("Rota inicial")
   })
 
-  router.post('/pet/create', Pets.createPets)
+  router.post('/pet/create', Pets.createPets);
 
   router.get('/pet/list', Pets.listaPets);
 
-  router.delete('/pet/:id', (req, res)=>{
-    res.send("Rota inicial")
-  })
+  router.delete('/pet/:id', Pets.deletePets);
 
-  router.put('/pet/:id', (req, res)=>{
-    res.send("Rota inicial")
-  })
+  router.put('/pet/:id', Pets.altPets);
+  
 
 
 

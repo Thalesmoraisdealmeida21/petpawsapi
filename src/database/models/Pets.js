@@ -20,7 +20,7 @@ class Pets extends Model {
           },
           
           deficiencia: {
-            type: DataTypes.ENUM(['NÃO POSSUI', 'AUDITIVA', 'OCULAR', 'FERIDA','MEMBROS']),
+            type: DataTypes.ENUM(['NAO POSSUI', 'AUDITIVA', 'OCULAR', 'FERIDA', 'MEMBROS']),
             allowNull: true,
           },
 
@@ -29,7 +29,17 @@ class Pets extends Model {
             allowNull: true,
           },
 
-          descrição: {
+          sexo: {
+            type: DataTypes.ENUM(['MASCULINO', 'FEMININO']),
+            allowNull: true,
+          },
+
+          porte: {
+            type: DataTypes.ENUM(['PEQUENO', 'MEDIO', 'GRANDE']),
+            allowNull: true,
+          },
+
+          descriçao: {
             type: DataTypes.TEXT,
             allowNull: true,
           },

@@ -23,7 +23,7 @@ module.exports = {
         password: senha
 
       }).then((user)=>{
-        res.status(200).json()
+        res.status(200).json(users)
       })
 
     
